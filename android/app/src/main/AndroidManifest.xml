@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ekuid_assignment">
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="ekuid_assignment"
+        android:label="Ekuid Assignment"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

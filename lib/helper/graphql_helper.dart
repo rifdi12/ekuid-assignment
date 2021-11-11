@@ -60,7 +60,7 @@ editStudent({id, name, age, lastName}) async {
     document: gql(
       """
       mutation{
-        editPerson(id: $id, name: "$name", lastName: "$lastName", age: $age) {
+        editPerson(id: "$id", name: "$name", lastName: "$lastName", age: $age) {
           id
           name
           lastName
@@ -81,17 +81,14 @@ deleteStudent({id}) async {
     document: gql(
       """
       mutation{
-        deletePerson(id: $id) {
+        deletePerson(id: "$id") {
           id
-          name
-          lastName
-          age
         }
       }""",
     ),
   );
 
   final QueryResult result = await _client.mutate(options);
-  print(result.data);
+  print(result);
   return result;
 }
